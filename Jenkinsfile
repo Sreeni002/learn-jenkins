@@ -26,6 +26,15 @@ pipeline {
         sh 'echo PERSON - ${PERSON}'
       }
     }
+
+    stage(two) {
+      when {
+        GIT BRANCH == "origin/test"
+      }
+    }
+      steps {
+        sh 'env'
+      }
   }
   post {
    always {
