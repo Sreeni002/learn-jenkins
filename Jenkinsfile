@@ -6,7 +6,11 @@ pipeline {
   }
 
   options {
-    ansiColor{'xterm'}
+    ansiColor('xterm')
+  }
+
+  parameters {
+    string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to')
   }
 
   environment {
@@ -18,6 +22,7 @@ pipeline {
       steps {
         sh 'echo this is a test pipeline using Jenkins'
         sh 'echo ${SAMPLE_URL}'
+        sh 'echo PERSON - ${PERSON}'
       }
     }
   }
