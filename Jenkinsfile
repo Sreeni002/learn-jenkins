@@ -5,9 +5,14 @@ pipeline {
     }
   }
 
-  environment {
-    SAMPLE_URL = "example.com"
+  options {
+    ansiColor{'xterm'}
   }
+
+  environment {
+    SAMPLE_URL="example.com"
+  }
+
   stages {
     stage('one') {
       steps {
